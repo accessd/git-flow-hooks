@@ -87,3 +87,12 @@ function __get_notify_to_slack {
 
     echo $NOTIFY_TO_SLACK
 }
+
+function __get_notify_to_hipchat {
+    NOTIFY_TO_HIPCHAT=false
+    if [ -n "${HIPCHAT_URL}" ] && [ -n "${HIPCHAT_ROOM_ID}" ] && [ -n "${HIPCHAT_AUTH_TOKEN}" ]; then
+        NOTIFY_TO_HIPCHAT=true
+    fi
+
+    echo $NOTIFY_TO_HIPCHAT
+}
